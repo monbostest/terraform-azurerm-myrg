@@ -10,18 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: Terraform Init
+- script: echo "This is my first pipeline"
   displayName: 'Terraform Pipeline'
 
 - task: TerraformCLI@0
   inputs:
     command: 'init'
-    backendType: 'azurerm'
-    backendServiceArm: 'Free Trial(0c6b065f-5b32-47b7-b55f-6e6cbe2eb88c)'
-    ensureBackend: true
-    backendAzureRmResourceGroupName: 'ytree'
-    backendAzureRmResourceGroupLocation: 'East Asia'
-    backendAzureRmStorageAccountName: 'frdsxcza'
-    backendAzureRmContainerName: 'tfstat'
-    backendAzureRmKey: 'tfstate'
     allowTelemetryCollection: true
