@@ -10,14 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo "This is my first pipeline"
+- script: echo $(NAME)
   displayName: 'Terraform Pipeline'
 
-- task: TerraformCLI@0
-  inputs:
-    command: 'init'
-    allowTelemetryCollection: true
-- task: TerraformCLI@0
-  inputs:
-    command: 'apply'
-    allowTelemetryCollection: true
