@@ -3,18 +3,20 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-jobs:
-- job: First
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+stages:
+- stage: init
+  jobs:
+  - job: First
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
 
-  - script: ls -l
-    displayName: 'Run a multi-line script'
-- job: second
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+    - script: ls -l
+      displayName: 'Run a multi-line script'
+  - job: second
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
 
-  - script: ls -l
-    displayName: 'Run a multi-line script'
+    - script: ls -l
+      displayName: 'Run a multi-line script'
